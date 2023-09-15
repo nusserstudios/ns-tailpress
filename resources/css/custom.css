@@ -1,0 +1,111 @@
+header#masthead .sub-menu {
+    @apply relative w-full md:mt-1 md:rounded-lg md:border md:shadow-lg md:bg-white md:border-gray-200 md:w-auto md:text-base md:z-10 md:absolute md:dark:bg-gray-800 md:dark:border-gray-600;
+}
+
+ul.sub-menu {
+    @apply absolute p-2;
+}
+
+header#masthead .sub-menu li {
+    @apply w-full py-2 text-gray-700 md:mr-4 dark:text-white;
+}
+
+/* Ensuring the submenu items are relatively positioned */
+#primary-menu li:has(ul.sub-menu) > a {
+    @apply relative md:mr-4;
+}
+
+/* Creating the triangle shape using the ::after pseudo-element */
+#primary-menu li:has(ul.sub-menu) > a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: -14px;
+    transform: translateY(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor; /* using the text color of the anchor */
+    display: inline-block;
+}
+
+article > *:not(.entry-content),
+.entry-content > * {
+    @apply mx-auto text-xl max-w-content;
+}
+
+header.entry-header {
+    @apply capitalize;
+}
+
+.entry-content, .block-editor-block-list__layout {
+    h1 {
+        @apply text-2xl capitalize;
+    }
+
+    h2 {
+        @apply text-xl;
+    }
+
+    h3 {
+        @apply text-lg;
+    }
+
+    p, ul, ol {
+        a {
+            @apply text-pink-500 underline;
+
+            &:hover {
+                @apply no-underline;
+            }
+        }
+
+        @apply mb-8;
+    }
+
+    ul:not(.block-editor-block-variation-picker__variations) {
+        li {
+            @apply list-disc list-inside;
+        }
+    }
+
+    ol {
+        li {
+            @apply list-decimal list-inside;
+        }
+    }
+}
+
+#comments { 
+    .comments-title {
+        @apply text-2xl font-bold text-gray-900 capitalize dark:text-gray-100;
+    }
+    .comment-meta {
+        @apply mt-6;
+    }
+    .comment-author img {
+        @apply inline-flex;    
+    }
+    form label {
+        @apply block py-4 text-base font-medium text-gray-700 dark:text-white;
+    
+    }
+    p:nth-child(1) {
+        @apply py-6;
+    }
+    
+    p.comment-notes {
+        @apply pt-4;
+    }
+
+    form input {
+        @apply shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm;
+    }
+
+    textarea {
+        @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 min-h-[10rem];
+    }
+
+    [type='submit'] {
+        @apply px-5 py-3 text-sm font-medium text-center text-white rounded-lg bg-primary-500 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline;
+    }
+}
