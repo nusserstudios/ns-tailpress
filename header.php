@@ -17,7 +17,7 @@
 
 	<?php do_action( 'tailpress_header' ); ?>
 
-	<?php get_template_part( 'parts/header', 'nav' ); ?>
+	<?php get_template_part( 'template-parts/header', 'nav' ); ?>
 
 	<div id="content" class="flex-grow site-content">
 
